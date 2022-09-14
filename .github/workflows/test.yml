@@ -1,0 +1,14 @@
+name: "units-test"
+on:
+  pull_request:
+
+jobs:
+
+  # test action works running from the graph
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: ./
+      with:
+        milliseconds: 1000

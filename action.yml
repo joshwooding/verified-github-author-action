@@ -1,0 +1,9 @@
+name: 'Verified Github Authors'
+description: 'Fails if a commit’s author isn’t linked to a GitHub account'
+inputs:
+  GITHUB_TOKEN:
+    description: 'GitHub token'
+    required: true
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
