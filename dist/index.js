@@ -9683,6 +9683,8 @@ async function run() {
 
       const { data: commits } = await octokit.rest.pulls.listCommits({ owner, repo, pull_number  });
 
+      core.debug(commits);
+
       const containsBadAuthor = commits.some(commit => commit.author === null);
 
       if(containsBadAuthor){
@@ -9690,8 +9692,9 @@ async function run() {
       }
 
       core.info("No bad commits found")
+    } else {
+      core.setFailed(`Action needs to be run on the "pull_request" event but was run on "${github.context.eventName}" instead`);
     }
-    core.setFailed("Action needs to be run on the \"pull_request\" event");
   } catch (error) {
     core.setFailed(error.message);
   }
