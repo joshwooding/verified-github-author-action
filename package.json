@@ -4,7 +4,9 @@
   "description": "Verified Github Author Action",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "rome check .",
+    "format": "rome format . --write",
+    "check:format": "rome format .",
     "prepare": "ncc build index.js -o dist --source-map --license licenses.txt",
     "all": "npm run lint && npm run prepare"
   },
@@ -28,7 +30,7 @@
     "@actions/github": "^5.1.1"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.34.0",
-    "eslint": "^8.24.0"
+    "@vercel/ncc": "^0.36.0",
+    "rome": "^11.0.0"
   }
 }
