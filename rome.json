@@ -8,7 +8,6 @@
     "ignore": ["dist"]
   },
   "formatter": {
-    "enabled": true,
-    "ignore": ["dist"]
+    "enabled": true
   }
 }
