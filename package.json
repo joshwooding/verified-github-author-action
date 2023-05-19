@@ -31,6 +31,6 @@
   },
   "devDependencies": {
     "@vercel/ncc": "^0.36.1",
-    "rome": "^11.0.0"
+    "rome": "^12.1.2"
   }
 }
