@@ -1,36 +1,32 @@
 {
-  "name": "verified-github-author-action",
-  "version": "1.0.0",
-  "description": "Verified Github Author Action",
-  "main": "index.js",
-  "scripts": {
-    "lint": "rome check .",
-    "format": "rome format . --write",
-    "check:format": "rome format .",
-    "prepare": "ncc build index.js -o dist --source-map --license licenses.txt && npm run format",
-    "all": "npm run lint && npm run prepare"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/joshwooding/verified-github-author-action.git"
-  },
-  "keywords": [
-    "GitHub",
-    "Actions",
-    "JavaScript"
-  ],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/actions/javascript-action/issues"
-  },
-  "homepage": "https://github.com/actions/javascript-action#readme",
-  "dependencies": {
-    "@actions/core": "^1.10.0",
-    "@actions/github": "^5.1.1"
-  },
-  "devDependencies": {
-    "@vercel/ncc": "^0.36.1",
-    "rome": "^11.0.0"
-  }
+	"name": "verified-github-author-action",
+	"version": "0.2.0",
+	"description": "Verified Github Author Action",
+	"main": "index.js",
+	"scripts": {
+		"lint": "npx @biomejs/biome lint --apply .",
+		"format": "npx @biomejs/biome format --write .",
+		"check:format": "npx @biomejs/biome check --apply .",
+		"prepare": "ncc build index.js -o dist --source-map --license licenses.txt && npm run format",
+		"all": "npm run lint && npm run prepare"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/joshwooding/verified-github-author-action.git"
+	},
+	"keywords": ["GitHub", "Actions", "Author"],
+	"author": "Joshua Wooding",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/joshwooding/verified-github-author-action/issues"
+	},
+	"homepage": "https://github.com/joshwooding/verified-github-author-action#readme",
+	"dependencies": {
+		"@actions/core": "^1.10.0",
+		"@actions/github": "^6.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.7.3",
+		"@vercel/ncc": "^0.38.1"
+	}
 }
